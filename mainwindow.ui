@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestion du Portefeuille</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget { background-color: #f5f5dc; }</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="leftSideLayout">
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="text">
+         <string>Enregistrer le Portefeuille en Texte</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #D2B48C; color: #FFFFFF; border-radius: 5px; padding: 5px; font-weight: bold; } QPushButton:hover { background-color: #A0522D; }</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exportButton">
+        <property name="text">
+         <string>Enregistrer le Portefeuille en Image</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #8FBC8F; color: #FFFFFF; border-radius: 5px; padding: 5px; font-weight: bold; } QPushButton:hover { background-color: #556B2F; }</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="walletGroupBox">
+        <property name="title">
+         <string>Informations du Portefeuille</string>
+        </property>
+        <layout class="QHBoxLayout" name="walletLayout">
+         <item>
+          <widget class="QLabel" name="walletAmountLabel"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="transactionsGroupBox">
+        <property name="title">
+         <string>Transactions</string>
+        </property>
+        <layout class="QVBoxLayout" name="transactionsLayout">
+         <item>
+          <widget class="QTableView" name="tableView"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addButton">
+           <property name="text">
+            <string>Ajouter une Transaction</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteButton">
+           <property name="text">
+            <string>Supprimer la Transaction Sélectionnée</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="chartGroupBox">
+        <property name="title">
+         <string>Visualisation des Dépenses</string>
+        </property>
+        <layout class="QVBoxLayout" name="chartLayout">
+         <item>
+          <widget class="QWidget" name="chartContainer" native="true"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+ <widget class="QLabel" name="profilePictureLabel">
+  <property name="styleSheet">
+   <string notr="true">QLabel { border: 2px dashed #D2B48C; }</string>
+  </property>
+  <property name="alignment">
+   <set>Qt::AlignCenter</set>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>200</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>200</width>
+    <height>200</height>
+   </size>
+  </property>
+ </widget>
+</item>
+
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>&amp;Fichier</string>
+    </property>
+    <addaction name="actionNouveau_Portefeuille"/>
+   </widget>
+   <addaction name="menuFichier"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNouveau_Portefeuille">
+   <property name="text">
+    <string>Créer un nouveau portefeuille</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
