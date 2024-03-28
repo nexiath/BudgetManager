@@ -1,7 +1,9 @@
-![2024-03-28-13-28-43](https://github.com/nexiath/BudgetManager/assets/108474515/86ef1b3c-46af-41a2-bb39-6a70297a3e72)# BudgetManager
+# BudgetManager
 
 ## Description
 BudgetManager est une application de gestion de budget développée avec C++ et le framework Qt. Elle permet aux utilisateurs d'enregistrer leur budget, d'ajouter des dépenses, de visualiser l'évolution de leur portefeuille financier, et d'obtenir un aperçu visuel des catégories de dépenses via un diagramme circulaire. Les utilisateurs peuvent également sauvegarder les informations de leur portefeuille sous forme d'image ou de fichier texte pour une gestion et un suivi facilités.
+
+![2024-03-28-13-28-43](https://github.com/nexiath/BudgetManager/assets/108474515/eb736eff-6127-4814-865e-fa77a9d5b46d)
 
 ## Prérequis
 Pour compiler et exécuter BudgetManager, les composants suivants doivent être installés sur votre système :
@@ -54,9 +56,6 @@ Après avoir lancé BudgetManager, suivez ces étapes pour gérer votre budget :
 2. **Ajouter des dépenses :** Cliquez sur 'Ajouter une dépense' pour enregistrer chaque dépense en précisant la catégorie.
 3. **Visualiser :** Consultez l'évolution de votre portefeuille et examinez le piechart pour comprendre la répartition de vos dépenses.
 4. **Sauvegarder :** Exportez vos données en image ou en fichier texte via les options de sauvegarde.
-
-![2024-03-28-13-28-43](https://github.com/nexiath/BudgetManager/assets/108474515/eb736eff-6127-4814-865e-fa77a9d5b46d)
-
 
 ---
 BudgetManager - Gérez votre budget intelligemment.
