@@ -1,4 +1,4 @@
-#include "BudgetModel.h"
+#include "budgetmodel.h"
 #include <QBrush>
 #include <QColor>
 #include <algorithm>

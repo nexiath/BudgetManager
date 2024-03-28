@@ -1,4 +1,4 @@
-#include "WalletInitDialog.h"
+#include "walletinitdialog.h"
 #include <QVBoxLayout>
 #include <QLineEdit>
 #include <QPushButton>

@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "BudgetModel.h"
-#include "BudgetItem.h"
-#include "WalletInitDialog.h"
+#include "budgetmodel.h"
+#include "budgetitem.h"
+#include "walletinitdialog.h"
 #include <QVBoxLayout>
 #include <QDialog>
 #include <QFormLayout>
@@ -26,6 +26,9 @@
 #include <QFileDialog>
 #include <QPainter>
 #include <QTextDocument>
+#include <QDebug>
+
+
 
 void MainWindow::exportData() {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Exporter les données"), "", tr("Fichiers texte (*.txt);;Tous les fichiers (*)"));
@@ -135,7 +138,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView->verticalHeader()->setDefaultSectionSize(32);
     ui->tableView->setSortingEnabled(true);
 
-    chartView = new QChartView();
+    chartView = new QtCharts::QChartView();
     chartView->setRenderHint(QPainter::Antialiasing);
     ui->chartContainer->setLayout(new QVBoxLayout());
     ui->chartContainer->layout()->addWidget(chartView);
@@ -160,9 +163,21 @@ MainWindow::~MainWindow() {
 
 void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
     if (event->mimeData()->hasUrls()) {
-        event->acceptProposedAction();
+        QList<QUrl> urlList = event->mimeData()->urls();
+        if (!urlList.isEmpty()) {
+            QUrl firstUrl = urlList.first();
+            QFileInfo fileInfo(firstUrl.toLocalFile());
+            QString fileType = fileInfo.suffix().toLower();
+
+            QStringList imageTypes = {"jpg", "jpeg", "png", "gif", "bmp"};
+
+            if (imageTypes.contains(fileType)) {
+                event->acceptProposedAction();
+            }
+        }
     }
 }
+
 
 void MainWindow::dropEvent(QDropEvent *event) {
     const QMimeData *mimeData = event->mimeData();
@@ -282,7 +297,7 @@ void MainWindow::setupPieChart() {
 
 void MainWindow::updatePieChart() {
     chartView->chart()->removeAllSeries();
-    auto *series = new QPieSeries();
+    auto *series = new QtCharts::QPieSeries();
     QMap<BudgetItem::Category, double> sumsByCategory;
 
     for (int i = 0; i < model->rowCount(); ++i) {
@@ -298,7 +313,7 @@ void MainWindow::updatePieChart() {
         series->append(categoryName + QString(": %1 €").arg(amount, 0, 'f', 2), amount);
     }
 
-    QChart *chart = new QChart();
+    auto *chart = new QtCharts::QChart();
     chart->addSeries(series);
     chart->setTitle(tr("Dépenses par Catégorie"));
     chart->legend()->setVisible(true);
@@ -311,4 +326,5 @@ void MainWindow::updatePieChart() {
         slice->setLabelVisible(true);
     }
 }
+
 

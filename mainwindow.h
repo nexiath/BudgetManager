@@ -6,10 +6,11 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QChart>
 #include <QLabel>
-#include "BudgetModel.h"
-#include "WalletInitDialog.h"
+#include "budgetmodel.h"
+#include "walletinitdialog.h"
 #include <QDragEnterEvent>
 #include <QDropEvent>
+#include <QtCharts/QChartView>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,11 +39,10 @@ protected:
 private:
     Ui::MainWindow *ui;
     BudgetModel *model;
-    QChartView *chartView;
     QLabel *walletAmountLabel;
     double walletAmount;
     void onDeleteButtonClicked();
-
+    QtCharts::QChartView *chartView;
 
     void setupUI();
     void showWalletInitDialog();

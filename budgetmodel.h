@@ -3,7 +3,7 @@
 
 #include <QAbstractTableModel>
 #include <QList>
-#include "BudgetItem.h"
+#include "budgetitem.h"
 #include <QString>
 #include <QObject>
 
