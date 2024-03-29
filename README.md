@@ -1,6 +1,4 @@
 # BudgetManager
-QT 6.6
-
 ## Description
 BudgetManager est une application de gestion de budget développée avec C++ et le framework Qt. Elle permet aux utilisateurs d'enregistrer leur budget, d'ajouter des dépenses, de visualiser l'évolution de leur portefeuille financier, et d'obtenir un aperçu visuel des catégories de dépenses via un diagramme circulaire. Les utilisateurs peuvent également sauvegarder les informations de leur portefeuille sous forme d'image ou de fichier texte pour une gestion et un suivi facilités.
 
